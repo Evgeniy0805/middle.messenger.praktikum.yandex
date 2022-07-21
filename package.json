@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build && node server.js",
     "build": "parcel build ./static/index.html",
-    "dev": "parcel static/index.html --open --lazy",
+    "dev": "parcel static/index.html --open",
     "watch": "parcel watch"
   },
   "author": "Evgeniy Turkin",
@@ -16,9 +16,6 @@
     "handlebars": "^4.7.7"
   },
   "devDependencies": {
-    "parcel": "^2.6.2",
-    "parcel-transformer-hbs": "^1.0.4",
-    "postcss": "^8.4.14",
     "@parcel/transformer-html": "^2.6.2",
     "@parcel/transformer-posthtml": "^2.6.2",
     "@parcel/transformer-sass": "^2.6.2",
@@ -27,6 +24,9 @@
     "autoprefixer": "^10.4.7",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "parcel": "^2.6.2",
+    "parcel-transformer-hbs": "^1.0.4",
+    "postcss": "^8.4.14"
   }
 }
