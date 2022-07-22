@@ -4,3 +4,8 @@
   # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
   # This is the directory that you are publishing from (relative to root of your repo)
   publish = "dist/"
+  
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
