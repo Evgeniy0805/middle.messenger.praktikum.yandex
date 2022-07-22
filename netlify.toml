@@ -5,7 +5,7 @@
   # This is the directory that you are publishing from (relative to root of your repo)
   publish = "dist/"
   
-  [[redirects]]
+[[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/dist"
   status = 200
