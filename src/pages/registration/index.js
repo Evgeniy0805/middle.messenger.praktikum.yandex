@@ -1,4 +1,5 @@
 import reg from './registration.hbs';
+import './registration.scss';
 import form from '../../components/form/index'
 import input from '../../components/input/index';
 import button from '../../components/button/index'
