@@ -4,7 +4,7 @@
   "description": "",
   "default": "index.html",
   "scripts": {
-    "start": "npm run build && node server.js",
+    "start": "node server.js",
     "build": "parcel build ./static/index.html",
     "dev": "parcel static/index.html --open",
     "watch": "parcel watch"
