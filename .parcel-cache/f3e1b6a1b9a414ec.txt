@@ -1,5 +1,5 @@
 11332
-90/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/static/index.html1658348797476511000 0
+90/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/static/index.html1658440069658402718 0
 90/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/package-lock.json1658438720307002553 0
 97/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/src/pages/chats/index.js1658434837247407000 0
 99/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/src/pages/chats/chats.scss1658434837247407000 0
@@ -1522,7 +1522,7 @@
 117/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/caniuse-lite/data/regions/CR.js1657885839259244000 0
 153/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/utils/dist/ts-eslint-scope/ScopeManager.d.ts.map1657953321487177000 0
 94/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/posthtml1657887069914257000 1
-72/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex1658436773642618114 1
+72/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex1658439070982434770 1
 128/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/caniuse-lite/data/features/inline-block.js1657885839463242000 0
 108/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/word-wrap/package.json1657951929043048000 0
 97/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/escape-html1657885750160480000 1
@@ -3020,7 +3020,7 @@
 102/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/ajv/lib/ajv.d.ts1657951930047043000 0
 104/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/domelementtype/lib1657887069946257000 1
 143/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/htmlnano/docs/versioned_docs/version-2.0.0/040-presets.md1657962914702386000 0
-99/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/userIcon.789626cc.svg1658436923249564550 0
+99/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/userIcon.789626cc.svg1658440070258401947 0
 111/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/iconv-lite/lib/index.d.ts1657885750196479000 0
 106/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/tslib/tslib.es6.html1657962914502388000 0
 114/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/function-bind/test/.eslintrc1657885750188480000 0
@@ -3854,7 +3854,7 @@
 132/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/core/lib/requests/ValidationRequest.js1657885839419243000 0
 149/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/lmdb/dependencies/lmdb-data-v1/libraries/liblmdb/sample-mdb.txt1657885839431242000 0
 129/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/eslint/node_modules/type-check/package.json1657953199798247000 0
-95/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/user.2dd87c56.svg1658436923217564781 0
+95/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/user.2dd87c56.svg1658440070226401988 0
 101/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/globals/license1657887069894257000 0
 117/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/svgo/plugins/removeEmptyText.js1657962914674387000 0
 113/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/htmlnano/docs/versions.json1657962914694386000 0
@@ -4171,7 +4171,7 @@
 116/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/detect-libc/bin/detect-libc.js1657885838855248000 0
 92/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/terser1657962914730386000 1
 105/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/yallist/iterator.js1657953321179175000 0
-100/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.38ec9247.css.map1658436923221564753 0
+100/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.38ec9247.css.map1658440070230401983 0
 125/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/types/dist/generated1657953321295176000 1
 114/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/fast-glob/out/utils/index.js1657953321295176000 0
 112/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/nullthrows/nullthrows.d.ts1657885838795249000 0
@@ -4217,7 +4217,7 @@
 95/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/csso/dist1657962914650387000 1
 125/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/2021/IsBigIntElementType.js1657953321603178000 0
 130/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/parser/dist/parser.js.map1657953321235176000 0
-98/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/profile.94ead07c.svg1658436923249564550 0
+98/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/profile.94ead07c.svg1658440070258401947 0
 137/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/scope-manager/dist/lib/es2021.js1657953321371176000 0
 103/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/debug/src/node.js1657885750192480000 0
 112/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/side-channel/.eslintignore1657885750148480000 0
@@ -4275,7 +4275,7 @@
 115/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@eslint/eslintrc/node_modules1657953199650246000 1
 134/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/core/lib/requests/ParcelConfigRequest.js1657885839307244000 0
 124/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/transformer-babel/src/utils.js1657962914614387000 0
-96/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/phone.c7913dfa.svg1658436923217564781 0
+96/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/phone.c7913dfa.svg1658440070226401988 0
 135/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/caniuse-lite/data/features/requestidlecallback.js1657885839495242000 0
 124/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/runtime-js/lib/helpers/browser1657962914654387000 1
 140/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/core/test/fixtures/targets-default-distdir-one1657885839451242000 1
@@ -4309,7 +4309,7 @@
 128/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/posthtml/node_modules/posthtml-parser/dist1657887069926257000 1
 104/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/mime-types/LICENSE1657885750148480000 0
 118/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/nanoid/url-alphabet/package.json1657951929719045000 0
-95/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/pass.a8ea9d52.svg1658436923249564550 0
+95/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/pass.a8ea9d52.svg1658440070258401947 0
 123/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/eslint/lib/rules/consistent-return.js1657953199834248000 0
 101/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/acorn/README.md1657885838979247000 0
 116/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/css-what/lib/commonjs/types.js1657962914590387000 0
@@ -4350,7 +4350,7 @@
 131/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/eslint-plugin/dist/configs1657953321591178000 1
 143/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/eslint-plugin/dist/rules/quotes.js.map1657953321587178000 0
 107/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/detect-libc/README.md1657885838795249000 0
-95/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.975ef6c8.js1658438733322988762 0
+95/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.975ef6c8.js1658440070274401926 0
 119/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/eslint/lib/shared/runtime-info.js1657953199878248000 0
 135/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/package-manager/src/promiseFromProcess.js1657885839135245000 0
 116/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/2021/CreateHTML.js1657953321519177000 0
@@ -4473,7 +4473,7 @@
 137/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/handlebars/lib/handlebars/helpers/helper-missing.js1657885975230034000 0
 113/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/function-bind/.editorconfig1657885750176480000 0
 91/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/fastq1657953321259176000 1
-102/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/iconProfile.748c2a46.svg1658436923217564781 0
+102/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/iconProfile.748c2a46.svg1658440070226401988 0
 159/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/eslint-plugin/docs/rules/strict-boolean-expressions.md1657953321627178000 0
 93/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/qs/dist1657885750184480000 1
 147/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/scope-manager/dist/definition/index.js.map1657953321555178000 0
@@ -4643,7 +4643,7 @@
 125/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/core/src/dumpGraphToGraphViz.js1657885839211245000 0
 135/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/source-map/parcel_sourcemap_node/build.rs1657885839399243000 0
 113/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/5/DaysInYear.js1657953321539177000 0
-98/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/addUser.77420e35.svg1658436923249564550 0
+98/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/addUser.77420e35.svg1658440070258401947 0
 99/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/debug/LICENSE1657885750172480000 0
 109/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/ajv/lib/compile/util.js1657951929979044000 0
 124/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/core/lib/public/BundleGroup.js1657885839183245000 0
@@ -4681,7 +4681,7 @@
 140/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/runtime-browser-hmr/lib/loaders/hmr-runtime.js1657962914530388000 0
 110/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/term-size/vendor/windows1657962914554388000 1
 113/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/css-select/lib/compile.d.ts1657962914638387000 0
-96/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.38ec9247.css1658436923217564781 0
+96/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.38ec9247.css1658440070226401988 0
 114/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/cosmiconfig/dist/Explorer.js1657962914522388000 0
 134/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/caniuse-lite/data/features/css-touch-action-2.js1657885839399243000 0
 102/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/object-keys/test1657953321263176000 1
@@ -5024,7 +5024,7 @@
 146/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/eslint-plugin/docs/rules/comma-spacing.md1657953321599178000 0
 113/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@types/parse-json/README.md1657962914506388000 0
 142/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/runtime-js/lib/helpers/browser/preload-loader.js1657962914654387000 0
-97/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/search.d9d498a5.svg1658436923217564781 0
+97/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/search.d9d498a5.svg1658440070226401988 0
 119/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/postcss-value-parser/lib/index.js1657887069906257000 0
 117/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/css-tree/lib/lexer/structure.js1657962914742386000 0
 109/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/2020/Get.js1657953321563178000 0
@@ -5451,7 +5451,7 @@
 131/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/resolve/test/resolver/dot_slash_main/index.js1657953321415177000 0
 133/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/transformer-html/src/HTMLTransformer.js1657887069930257000 0
 114/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/domhandler/lib/node.d.ts.map1657887069930257000 0
-96/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/email.92675299.svg1658436923217564781 0
+96/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/email.92675299.svg1658440070226401988 0
 107/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/safer-buffer/safer.js1657885750176480000 0
 103/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/typescript/lib/de1657953321775179000 1
 113/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/eslint/lib/rules/no-void.js1657953199870248000 0
@@ -5530,7 +5530,7 @@
 107/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/lodash.merge/index.js1657953199794247000 0
 125/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/5/FromPropertyDescriptor.js1657953321563178000 0
 118/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@jridgewell/set-array/dist/types1657962914554388000 1
-99/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.975ef6c8.js.map1658438733326988757 0
+99/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.975ef6c8.js.map1658440070278401922 0
 107/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/is-json/test/index.js1657885838851248000 0
 114/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/function.prototype.name/test1657953321279176000 1
 131/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/caniuse-lite/data/features/css-crisp-edges.js1657885839283244000 0
@@ -6654,7 +6654,7 @@
 119/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/core/test/fixtures/config1657885839011247000 1
 121/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/watcher/prebuilds/linux-x641657885839259244000 1
 106/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/yaml/types/binary.js1657962914534388000 0
-105/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/changeDataIcon.9bcc5771.svg1658436923249564550 0
+105/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/changeDataIcon.9bcc5771.svg1658440070258401947 0
 114/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/tsconfig-paths/lib/__tests__1657953321383177000 1
 131/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/resolve/test/module_dir/xmodules/aaa/index.js1657953321379177000 0
 121/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/eslint/lib/rules/no-extra-parens.js1657953199858248000 0
@@ -7008,7 +7008,7 @@
 134/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/eslint-plugin-import/lib/rules/no-self-import.js1657953321411177000 0
 118/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/2021/IteratorNext.js1657953321631178000 0
 118/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/2016/HourFromTime.js1657953321587178000 0
-97/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/err404.3a1ca90b.svg1658436923217564781 0
+97/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/err404.3a1ca90b.svg1658440070226401988 0
 113/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/css/node/index.d.ts1657962914562388000 0
 105/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/css/LICENSE1657962914502388000 0
 99/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@parcel/cache1657885838935248000 1
@@ -7315,7 +7315,7 @@
 99/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/array-flatten1657885750160480000 1
 121/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/caniuse-lite/data/regions/alt-af.js1657885839015247000 0
 113/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/2021/ToUint8.js1657953321695178000 0
-88/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.html1658438534031113385 0
+88/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist/index.html1658440070258401947 0
 117/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/caniuse-lite/data/regions/GA.js1657885839455242000 0
 117/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/caniuse-lite/data/regions/IR.js1657885839467242000 0
 117/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/caniuse-lite/data/regions/KY.js1657885839471242000 0
@@ -9604,7 +9604,7 @@
 143/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/scope-manager/dist/lib/esnext.array.js1657953321383177000 0
 123/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/5/CheckObjectCoercible.js1657953321507177000 0
 151/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/scope-manager/dist/lib/es2015.reflect.d.ts.map1657953321515177000 0
-85/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/package.json1658438720307002553 0
+85/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/package.json1658439070982434770 0
 144/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/eslint-utils/node_modules/eslint-visitor-keys/CHANGELOG.md1657953199806247000 0
 119/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/es-abstract/2021/Number/divide.js1657953321547178000 0
 151/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/@typescript-eslint/scope-manager/dist/lib/es2018.promise.d.ts.map1657953321523177000 0
@@ -10242,7 +10242,7 @@
 116/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/update-browserslist-db/LICENSE1657885838751250000 0
 134/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/eslint/lib/rules/prefer-promise-reject-errors.js1657953199874248000 0
 191/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/typescript/loc/lcl/FRA/TypeScriptLanguageService/Microsoft.CodeAnalysis.TypeScript.EditorFeatures.dll.lcl1657953321787179000 0
-77/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist1658438733326988757 1
+77/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/dist1658440070278401922 1
 160/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/typescript/loc/lcl/JPN/TypeScriptDebugEngine/TypeScriptDebugEngine.dll.lcl1657953321803179000 0
 124/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/typescript/loc/lcl/JPN/TypeScriptTasks1657953321795179000 1
 153/home/evgeniy/Desktop/Yandex Praktikum/middle.messenger.praktikum.yandex/node_modules/typescript/loc/lcl/JPN/Targets/TypeScriptProjectProperties.xaml.lcl1657953321807179000 0
