@@ -1,4 +1,5 @@
 import auth from './auth.hbs';
+import './auth.scss';
 import form from '../../components/form/index'
 import input from '../../components/input/index';
 import button from '../../components/button/index'
