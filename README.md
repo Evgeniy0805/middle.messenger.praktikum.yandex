@@ -10,7 +10,7 @@
 
 ## Ссылки:
 - **[Макет Figma](https://www.figma.com/file/nWqRXj2Y0DQMlILIXWWhxk/web_messenger)**
-- **[Проект на netlify](https://genuine-puffpuff-ab7d3c.netlify.app/)**
+- **[Проект на netlify](https://62dbb71a0a983d6ed01f4c36--genuine-puffpuff-ab7d3c.netlify.app/)**
 
 ---
 
