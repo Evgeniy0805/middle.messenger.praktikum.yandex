@@ -1,0 +1,26 @@
+.chats {
+    display: flex;
+    justify-content: space-between;
+    &__wrapper {
+        width: 40%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px;
+        color: #36577E;
+    }
+    &__link-profile {
+        text-decoration: none;
+        color: #36577E;
+    }
+}
+
+.input_chats {
+    margin-top: 15px;
+    & input {
+        background-color: #D9D9D9;
+        color: #36577E;
+    }
+} 

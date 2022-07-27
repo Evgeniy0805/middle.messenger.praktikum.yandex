@@ -1,0 +1,16 @@
+.input {
+    position: relative;
+    &__item {
+        background-color: #36577E;
+        border: 1px solid #D9D9D9;
+        color: #D9D9D9;
+        padding: 10px 10px 10px 45px;
+        border-radius: 10px;
+    }
+    &__icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
