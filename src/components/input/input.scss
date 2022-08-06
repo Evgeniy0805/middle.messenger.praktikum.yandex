@@ -6,6 +6,10 @@
         color: #D9D9D9;
         padding: 10px 10px 10px 45px;
         border-radius: 10px;
+        outline: none;
+        &:focus {
+            outline: none;
+        }
     }
     &__icon {
         position: absolute;

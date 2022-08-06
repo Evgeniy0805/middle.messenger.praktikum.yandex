@@ -1,11 +1,31 @@
 import err from './err_404.hbs';
 import './err_404.scss';
-import button from '../../components/button/index';
+import Component from '../../utils/Component';
+import Button from '../../components/button/index';
 import errIcon from '../../assets/icons/err404.svg';
 
-const data = {
-    button: button('button_err404', 'НАЗАД'),
-    errIcon: errIcon
-}
+class Error404 extends Component {
 
-export default err(data);
+    constructor(props) {
+        super('section', props);
+    };
+
+    render() {
+        return this.compile(err, this.props);
+    };
+};
+
+const error404Page = new Error404({
+    button: new Button({
+        text: 'НАЗАД',
+        attr: {
+            class: 'button button_err404'
+        }
+    }),
+    errIcon: errIcon,
+    attr: {
+        class: 'error404'
+    }
+});
+
+export default error404Page;

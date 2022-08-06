@@ -1,33 +1,34 @@
 import { root } from './consts';
-import auth from './pages/auth/index';
-import reg from './pages/registration/index';
-import chats from './pages/chats/index';
-import profile from './pages/profile/index';
-import err404 from './pages/error_404/index';
-import err500 from './pages/error_500/index';
+import { renderDOM } from './utils/renderDOM';
+import authPage from './pages/auth/index';
+import regPage from './pages/registration/index';
+import chatsPage from './pages/chats/index';
+import profilePage from './pages/profile/index';
+import error404Page from './pages/error_404/index';
+import error500Page from './pages/error_500/index';
 
 window.addEventListener('DOMContentLoaded', () => {
     switch (location.pathname) {
         case '/':
-            root.innerHTML = auth;
+            renderDOM('#root', authPage);
             break;
         case '/registration':
-            root.innerHTML = reg;
+            renderDOM('#root', regPage);
             break;
         case '/chats':
-            root.innerHTML = chats;
+            renderDOM('#root', chatsPage);
             break;
         case '/profile':
-            root.innerHTML = profile;
+            renderDOM('#root', profilePage);
             break;
         case '/err500':
-            root.innerHTML = err500;
+            renderDOM('#root', error500Page);
             break;
         case '/err404':
-            root.innerHTML = err404;
+            renderDOM('#root', error404Page);
             break;
         default:
-            root.innerHTML = err404;
+            renderDOM('#root', error404Page);
             break;
     };
 });

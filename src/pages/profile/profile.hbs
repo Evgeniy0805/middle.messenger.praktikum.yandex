@@ -1,12 +1,10 @@
-<section class="profile">
-    <div class="profile__wrapper">
-        <img src="{{src}}" alt="icon" class="profile__avatar">
-        <h3 class="profile__title">{{title}}</h3>
-        {{#each dataList}}
-        {{{this}}}
-        {{/each}}
-        {{#each buttons}} 
-        <a href="/chats">{{{this}}}</a>
-        {{/each}}
-    </div>
-</section>
+<div class="profile__wrapper">
+    <img src="{{src}}" alt="icon" class="profile__avatar">
+    <h3 class="profile__title">{{title}}</h3>
+    {{#each dataList}}
+    {{{this}}}
+    {{/each}}
+    {{#each buttons}} 
+    <a href="/chats">{{{this}}}</a>
+    {{/each}}
+</div>

@@ -1,6 +1,15 @@
 import chatPreview from './chatPreview.hbs'
 import './chatPreview.scss'
+import Component from '../../utils/Component';
 
-export default (title, lastMsg, time, number, iconSrc) => {
-    return chatPreview({title, lastMsg, time, number, iconSrc});
-};
+class ChatPreview extends Component {
+    constructor(props) {
+        super('div', props);
+    };
+
+    render() {
+        return this.compile(chatPreview, this.props);;
+    };
+}
+
+export default ChatPreview;
