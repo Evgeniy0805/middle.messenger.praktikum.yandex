@@ -26,14 +26,14 @@ class Chats extends Component {
 const chatsPage = new Chats({
     iconSrc: profileIcon,
     input: new Input({
-        inputClass: null,
+        inputClass: 'input_chats',
         type: 'text',
         placeholder: 'ПОИСК',
         inputName: 'search',
         inputIconClass: null,
         urlImg: searchIcon,
         attr: {
-            class: 'input input_chats'
+            class: 'input'
         }
     }),
     chats: [
@@ -140,7 +140,7 @@ const chatsPage = new Chats({
                 const msgInput = document.querySelector<HTMLInputElement>('.input_chat');
                 if (t && t.tagName === 'IMG' && msgInput) {
                     if (msgInput.value.length === 0) {
-                        msgInput.style.border = 'solid 1px red'
+                        msgInput.style.border = 'solid 1px red';
                     } else {
                         msgInput.style.border = 'solid 1px #D9D9D9';
                         console.log(msgInput.value)
