@@ -1,27 +1,30 @@
 .chats {
-    display: flex;
-    justify-content: space-between;
-    &__wrapper {
-        width: 40%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 25px;
-        color: #36577E;
-    }
-    &__link-profile {
-        text-decoration: none;
-        color: #36577E;
-    }
-}
+  display: flex;
+  justify-content: space-between;
 
-.input_chats {
+  &__wrapper {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    color: #36577e;
+  }
+
+  &__link-profile {
+    text-decoration: none;
+    color: #36577e;
+  }
+
+  &_chats {
     margin-top: 15px;
     margin-bottom: 15px;
+
     & input {
-        background-color: #D9D9D9;
-        color: #36577E;
+      background-color: #d9d9d9;
+      color: #36577e;
     }
-} 
+  }
+}
