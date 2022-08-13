@@ -1,32 +1,41 @@
+@import '../../styles/variables.scss';
+
 .login {
-    width: 100vw;
-    height: 100vh;
-    background: #36577E;
-    position: relative;
-    &__wrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #D9D9D9;
-        text-align: center;
-    }
-    &__title {
-        font-weight: 400;
-        font-size: 32px;
-    }
-    &__registration-link {
-        display: block;
-        margin-top: 30px;
-        text-decoration: none;
-        color: #D9D9D9;
-    }
+  width: 100vw;
+  height: 100vh;
+  background: $main-dark-color;
+  position: relative;
+
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $main-light-color;
+    text-align: center;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 32px;
+  }
+
+  &__registration-link {
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: $main-light-color;
+  }
 }
 
-.input_login {
+.input {
+  &_login {
     margin-top: 20px;
+  }
 }
 
-.button_login {
+.button {
+  &_login {
     margin-top: 20px;
+  }
 }

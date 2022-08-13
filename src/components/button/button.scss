@@ -1,4 +1,14 @@
+@import '../../styles/variables.scss';
+
 .button {
-    display: inline-block;
-    padding: 10px;
+  display: inline-block;
+  padding: 10px;
+  background-color: $main-light-color;
+  color: $main-dark-color;
+  border-radius: 5px;
+
+  &_profile {
+    background-color: $main-dark-color;
+    color: $main-light-color;
+  }
 }
