@@ -1,7 +1,9 @@
+@import '../../styles/variables.scss';
+
 .registration {
   width: 100vw;
   height: 100vh;
-  background: #36577e;
+  background: $main-dark-color;
   position: relative;
 
   &__wrapper {
@@ -9,7 +11,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #d9d9d9;
+    color: $main-light-color;
     text-align: center;
   }
 
@@ -17,7 +19,7 @@
     display: block;
     margin-top: 30px;
     text-decoration: none;
-    color: #d9d9d9;
+    color: $main-light-color;
   }
 }
 

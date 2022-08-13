@@ -6,11 +6,19 @@ import Input from '../../components/input';
 import ProfileItem from '../../components/profileItem/index';
 import imgUrl from '../../assets/icons/iconProfile.svg'
 import dataIcon from '../../assets/icons/changeDataIcon.svg';
-import { validateInput, validationExp } from '../../utils/validation'
+import { validateInput } from '../../utils/validation'
 
-class Profile extends Component {
+type ProfileProps = {
+    src: string,
+    title: string,
+    dataList: object[],
+    buttons: object[],
+    attr: object
+};
 
-    constructor(props) {
+class Profile extends Component<ProfileProps> {
+
+    constructor(props: ProfileProps) {
         super('section', props);
     };
 
@@ -19,126 +27,156 @@ class Profile extends Component {
     };
 };
 
+const emailInput = new Input({
+    inputClass: 'input_profile',
+    type: 'email',
+    placeholder: 'email',
+    inputName: 'email',
+    inputIconClass: null,
+    urlImg: null,
+    attr: {
+        class: 'input'
+    },
+    events: {
+        input: (e: Event) => validateInput(e),
+        focus: (e: Event) => validateInput(e),
+        blur: (e: Event) => validateInput(e),
+    }
+});
+
+const emailItem = new ProfileItem({
+    placeholder: 'ПОЧТА',
+    text: emailInput,
+    editIcon: dataIcon,
+    attr: {
+        class: 'profile-item'
+    }
+});
+
+const loginInput = new Input({
+    inputClass: 'input_profile',
+    type: 'text',
+    placeholder: 'логин',
+    inputName: 'login',
+    inputIconClass: null,
+    urlImg: null,
+    attr: {
+        class: 'input'
+    },
+    events: {
+        input: (e: Event) => validateInput(e),
+        focus: (e: Event) => validateInput(e),
+        blur: (e: Event) => validateInput(e),
+    }
+});
+
+const loginItem = new ProfileItem({
+    placeholder: 'ЛОГИН',
+    text: loginInput,
+    editIcon: dataIcon,
+    attr: {
+        class: 'profile-item'
+    }
+});
+
+const firstNameInput = new Input({
+    inputClass: 'input_profile',
+    type: 'text',
+    placeholder: 'имя',
+    inputName: 'firstName',
+    inputIconClass: null,
+    urlImg: null,
+    attr: {
+        class: 'input'
+    },
+    events: {
+        input: (e: Event) => validateInput(e),
+        focus: (e: Event) => validateInput(e),
+        blur: (e: Event) => validateInput(e),
+    }
+});
+
+const firstNameItem = new ProfileItem({
+    placeholder: 'ИМЯ',
+    text: firstNameInput,
+    editIcon: dataIcon,
+    attr: {
+        class: 'profile-item'
+    }
+});
+
+const secondNameInput = new Input({
+    inputClass: 'input_profile',
+    type: 'text',
+    placeholder: 'фамилия',
+    inputName: 'secondName',
+    inputIconClass: null,
+    urlImg: null,
+    attr: {
+        class: 'input'
+    },
+    events: {
+        input: (e: Event) => validateInput(e),
+        focus: (e: Event) => validateInput(e),
+        blur: (e: Event) => validateInput(e),
+    }
+});
+
+const secondNameItem = new ProfileItem({
+    placeholder: 'ФАМИЛИЯ',
+    text: secondNameInput,
+    editIcon: dataIcon,
+    attr: {
+        class: 'profile-item'
+    }
+});
+
+const phoneInput = new Input({
+    inputClass: 'input_profile',
+    type: 'text',
+    placeholder: 'телефон',
+    inputName: 'phone',
+    inputIconClass: null,
+    urlImg: null,
+    attr: {
+        class: 'input'
+    },
+    events: {
+        input: (e: Event) => validateInput(e),
+        focus: (e: Event) => validateInput(e),
+        blur: (e: Event) => validateInput(e),
+    }
+});
+
+const phoneItem = new ProfileItem({
+    placeholder: 'ТЕЛЕФОН',
+    text: phoneInput,
+    editIcon: dataIcon,
+    attr: {
+        class: 'profile-item'
+    }
+});
+
+const profileItems = [
+    emailItem,
+    loginItem,
+    firstNameItem,
+    secondNameItem,
+    phoneItem
+];
+
+const profileInputs = [
+    emailInput,
+    loginInput,
+    firstNameInput,
+    secondNameInput,
+    phoneInput
+];
+
 const profilePage = new Profile({
     src: imgUrl,
     title: 'Джеки Чан',
-    dataList: [
-        new ProfileItem({
-            placeholder: 'ПОЧТА',
-            text: new Input({
-                inputClass: 'input_profile',
-                type: 'email',
-                placeholder: 'email',
-                inputName: 'email',
-                inputIconClass: null,
-                urlImg: null,
-                attr: {
-                    class: 'input'
-                },
-                events: {
-                    input: (e: Event) => validateInput(e, validationExp.email.exp),
-                    focus: (e: Event) => validateInput(e, validationExp.email.exp),
-                    blur: (e: Event) => validateInput(e, validationExp.email.exp)
-                }
-            }),
-            editIcon: dataIcon,
-            attr: {
-                class: 'profile-item'
-            }
-        }),
-        new ProfileItem({
-            placeholder: 'ЛОГИН',
-            text: new Input({
-                inputClass: 'input_profile',
-                type: 'text',
-                placeholder: 'логин',
-                inputName: 'login',
-                inputIconClass: null,
-                urlImg: null,
-                attr: {
-                    class: 'input'
-                },
-                events: {
-                    input: (e: Event) => validateInput(e, validationExp.login.exp),
-                    focus: (e: Event) => validateInput(e, validationExp.login.exp),
-                    blur: (e: Event) => validateInput(e, validationExp.login.exp)
-                }
-            }),
-            editIcon: dataIcon,
-            attr: {
-                class: 'profile-item'
-            }
-        }),
-        new ProfileItem({
-            placeholder: 'ИМЯ',
-            text: new Input({
-                inputClass: 'input_profile',
-                type: 'text',
-                placeholder: 'имя',
-                inputName: 'first_name',
-                inputIconClass: null,
-                urlImg: null,
-                attr: {
-                    class: 'input'
-                },
-                events: {
-                    input: (e: Event) => validateInput(e, validationExp.userName.exp),
-                    focus: (e: Event) => validateInput(e, validationExp.userName.exp),
-                    blur: (e: Event) => validateInput(e, validationExp.userName.exp)
-                }
-            }),
-            editIcon: dataIcon,
-            attr: {
-                class: 'profile-item'
-            }
-        }),
-        new ProfileItem({
-            placeholder: 'ФАМИЛИЯ',
-            text: new Input({
-                inputClass: 'input_profile',
-                type: 'text',
-                placeholder: 'фамилия',
-                inputName: 'second_name',
-                inputIconClass: null,
-                urlImg: null,
-                attr: {
-                    class: 'input'
-                },
-                events: {
-                    input: (e: Event) => validateInput(e, validationExp.userName.exp),
-                    focus: (e: Event) => validateInput(e, validationExp.userName.exp),
-                    blur: (e: Event) => validateInput(e, validationExp.userName.exp)
-                }
-            }),
-            editIcon: dataIcon,
-            attr: {
-                class: 'profile-item'
-            }
-        }),
-        new ProfileItem({
-            placeholder: 'ТЕЛЕФОН',
-            text: new Input({
-                inputClass: 'input_profile',
-                type: 'text',
-                placeholder: 'телефон',
-                inputName: 'phone',
-                inputIconClass: null,
-                urlImg: null,
-                attr: {
-                    class: 'input'
-                },
-                events: {
-                    input: (e: Event) => validateInput(e, validationExp.phone.exp),
-                    focus: (e: Event) => validateInput(e, validationExp.phone.exp),
-                    blur: (e: Event) => validateInput(e, validationExp.phone.exp)
-                }
-            }),
-            editIcon: dataIcon,
-            attr: {
-                class: 'profile-item'
-            }
-        }),
-    ],
+    dataList: profileItems,
     buttons: [
         new Button({
             text: 'СОХРАНИТЬ',

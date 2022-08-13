@@ -2,8 +2,15 @@ import profileItem from './profileItem.hbs';
 import './profileItem.scss';
 import Component from '../../utils/Component';
 
-class ProfileItem extends Component {
-    constructor(props) {
+type ProfileItemProps = {
+    placeholder: string,
+    text: object,
+    editIcon: string,
+    attr: object
+};
+
+class ProfileItem extends Component<ProfileItemProps> {
+    constructor(props: ProfileItemProps) {
         super('div', props);
     };
 

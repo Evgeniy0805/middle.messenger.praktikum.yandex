@@ -1,18 +1,15 @@
-{{!-- <div class="chat__empty">{{title}}</div> --}}
 <div class="chat__header">
     <img src="{{avatar}}" alt="avatar" class="chat__avatar">
     <div class="chat__name">{{name}}</div>
     <img src="{{close}}" alt="close" class="chat__close">
 </div>
 <div class="chat__messages-list">
-    <div class="chat__date">{{date}}</div>
+    <time class="chat__date">{{date}}</time>
     {{#each messages}}
         {{{this}}}
     {{/each}}
 </div>
 <div class="chat__send-msg">
     {{{chatInput}}}
-    <img src="{{sendIcon}}" alt="" class="chat__send-msg__icon">
-
-    
+    <img src="{{sendIcon}}" alt="icon" class="chat__send-msg__icon">
 </div>

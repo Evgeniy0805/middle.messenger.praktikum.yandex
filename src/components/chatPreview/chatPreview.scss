@@ -1,21 +1,23 @@
+@import '../../styles/variables.scss';
+
 .chat-preview {
   width: 90%;
   height: 150px;
   padding: 5px;
-  border-top: solid 2px #36577e;
+  border-top: solid 2px $main-dark-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   &_active {
     width: 100%;
-    background: linear-gradient(to right, #adadad, #d9d9d9);
+    background: linear-gradient(to right, #adadad, $main-light-color);
   }
 
   &__icon {
     width: 50px;
     height: 50px;
-    border: 2px solid #36577e;
+    border: 2px solid $main-dark-color;
     border-radius: 100%;
     padding: 5px;
 
@@ -41,10 +43,10 @@
     width: 25px;
     height: 25px;
     margin: 10px auto 0;
-    background-color: #36577e;
-    border: solid 2px #36577e;
+    background-color: $main-dark-color;
+    border: solid 2px $main-dark-color;
     border-radius: 100%;
-    color: #d9d9d9;
+    color: $main-light-color;
     position: relative;
 
     &__number {

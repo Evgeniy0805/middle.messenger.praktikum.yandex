@@ -2,9 +2,33 @@ import input from "./input.hbs";
 import './input.scss'
 import Component from '../../utils/Component';
 
-class Input extends Component {
-    constructor(props) {
+type InputProps = {
+    inputClass: string | null,
+    type: string,
+    placeholder: string,
+    inputName: string,
+    inputIconClass: string | null,
+    urlImg: string | null,
+    attr: object,
+    events?: object,
+};
+
+class Input extends Component<InputProps> {
+    constructor(props: InputProps) {
         super('div', props);
+    };
+
+    _render() {
+        const block = this.render();
+        this.removeEvents();
+        this._element.innerHTML = '';
+        this._element.appendChild(block);
+        this.addEvents();
+        this.addAttribute();
+    };
+
+    render() {
+        return this.compile(input, this.props);
     };
 
     addEvents() {
@@ -23,10 +47,6 @@ class Input extends Component {
                     this._element.firstElementChild.removeEventListener(eventName, events[eventName]);
             });
         }
-    };
-
-    render() {
-        return this.compile(input, this.props);
     };
 }
 

@@ -2,8 +2,15 @@ import chatMsg from './chatMessage.hbs';
 import './chatMessage.scss';
 import Component from '../../utils/Component';
 
-class ChatMessage extends Component {
-    constructor(props) {
+type ChatMessageProps = {
+    text: string,
+    icon: string | null,
+    time: string,
+    attr: object,
+};
+
+class ChatMessage extends Component<ChatMessageProps> {
+    constructor(props: ChatMessageProps) {
         super('div', props);
     };
 
