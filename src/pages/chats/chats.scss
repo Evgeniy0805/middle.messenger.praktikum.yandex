@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .chats {
   display: flex;
   justify-content: space-between;
@@ -10,12 +12,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 25px;
-    color: #36577e;
+    color: $main-dark-color;
   }
 
   &__link-profile {
     text-decoration: none;
-    color: #36577e;
+    color: $main-dark-color;
   }
 
   &_chats {
@@ -23,8 +25,8 @@
     margin-bottom: 15px;
 
     & input {
-      background-color: #d9d9d9;
-      color: #36577e;
+      background-color: $main-light-color;
+      color: $main-dark-color;
     }
   }
 }

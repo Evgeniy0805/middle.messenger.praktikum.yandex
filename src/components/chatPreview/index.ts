@@ -2,8 +2,17 @@ import chatPreview from './chatPreview.hbs'
 import './chatPreview.scss'
 import Component from '../../utils/Component';
 
-class ChatPreview extends Component {
-    constructor(props) {
+type ChatPreviewProps = {
+    iconSrc: string,
+    title: string,
+    lastMsg: string,
+    time: string,
+    number: number,
+    attr: object
+};
+
+class ChatPreview extends Component<ChatPreviewProps> {
+    constructor(props: ChatPreviewProps) {
         super('div', props);
     };
 

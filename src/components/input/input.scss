@@ -1,17 +1,18 @@
+@import '../../styles/variables.scss';
+
 .input {
   position: relative;
 
   &__item {
-    background-color: #36577e;
-    border: 1px solid #d9d9d9;
-    color: #d9d9d9;
+    background-color: $main-dark-color;
+    border: 1px solid $main-light-color;
+    color: $main-light-color;
     padding: 10px 10px 10px 45px;
     border-radius: 10px;
     outline: none;
-
-    &:focus {
-      outline: none;
-    }
+    &_error {
+      border: solid 1px red;
+    }  
   }
 
   &__icon {
@@ -22,21 +23,21 @@
   }
 
   &_profile {
-    background-color: #d9d9d9;
-    color: #36577e;
+    background-color: $main-light-color;
+    color: $main-dark-color;
     font-size: 18px;
     text-align: right;
   }
 
   &_chats {
-    background-color: #d9d9d9;
-    color: #36577e;
+    background-color: $main-light-color;
+    color: $main-dark-color;
   }
 
   &_chat {
     width: 100%;
-    background-color: #d9d9d9;
-    color: #36577e;
+    background-color: $main-light-color;
+    color: $main-dark-color;
 
     &_wrapper {
       width: 80%;

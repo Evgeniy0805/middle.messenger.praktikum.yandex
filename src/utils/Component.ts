@@ -1,16 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import EventBus from "./EventBus";
 
-interface Component {
-    _id: string,
-    props: any,
-    _children: object,
-    _meta: object,
-    _element: HTMLElement,
-    eventBus: any
-}
+abstract class Component<Props extends {} | boolean>{
 
-class Component {
     static EVENTS = {
         INIT: "init",
         FLOW_CDM: "flow:component-did-mount",
@@ -18,21 +10,31 @@ class Component {
         FLOW_RENDER: "flow:render"
     };
 
-    constructor(tagName = 'div', propsAndChildren = {}) {
+    private _id: string;
+    protected props: Record<string, object>
+    private _children: object;
+    private _meta: object;
+    public _element: HTMLElement;
+    private eventBus: any
+    public isValid?: boolean
+    public value?: string
+
+    public constructor(tagName: string = 'div', propsAndChildren: Props) {
         const eventBus = new EventBus();
         this._id = uuidv4();
         const { props, children } = this.getChildren(propsAndChildren);
         this.props = props;
         this._children = children;
         this.initChildren();
-        this.props = this._makePropsProxy(props);
+        this.eventBus = () => eventBus;
+        this.props = this._makePropsProxy(props, this.eventBus);
 
         this._meta = {
             tagName,
             props
         }
         this._registerEvents(eventBus);
-        this.eventBus = () => eventBus;
+        
 
         eventBus.emit(Component.EVENTS.INIT);
     }
@@ -82,7 +84,10 @@ class Component {
     };
 
     _componentDidUpdate() {
-        return this._componentDidUpdate();
+        const response = this.componentDidUpdate();
+        if (response) {
+            this.eventBus().emit(Component.EVENTS.FLOW_RENDER);
+        };
     };
 
     componentDidUpdate() {
@@ -114,6 +119,7 @@ class Component {
         const { events = {} } = this.props;
         Object.keys(events).forEach(eventName => {
             this._element.addEventListener(eventName, events[eventName]);
+
         });
     };
 
@@ -124,7 +130,7 @@ class Component {
         });
     };
 
-    compile(template, props) {
+    public compile(template: any, props: object) {
         if(typeof(props) === 'undefined') {
             props = this.props;
         }
@@ -163,7 +169,7 @@ class Component {
         return fragment.content;
     }
 
-    setProps = nextProps => {
+    public setProps = (nextProps) => {
         if (!nextProps) {
             return;
         };
@@ -178,8 +184,7 @@ class Component {
         return this._element;
     }
 
-    _makePropsProxy(props) {
-        const self = this;
+    _makePropsProxy = (props, eventBus) => {
         const prop = new Proxy(props, {
             get(target, prop: string) {
                 if (prop.startsWith('_')) {
@@ -193,7 +198,7 @@ class Component {
                     throw new Error('Unavailable property');
                 };
                 target[prop] = value;
-                self.eventBus().emit(Component.EVENTS.FLOW_CDU);
+                eventBus().emit(Component.EVENTS.FLOW_CDU);
                 return true;
             },
             deleteProperty(): any {
@@ -207,5 +212,3 @@ class Component {
 };
 
 export default Component;
-
-export {Component};

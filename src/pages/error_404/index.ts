@@ -4,9 +4,15 @@ import Component from '../../utils/Component';
 import Button from '../../components/button/index';
 import errIcon from '../../assets/icons/err404.svg';
 
-class Error404 extends Component {
+type ErrorProps = {
+    errIcon: string,
+    button: object,
+    attr: object
+};
 
-    constructor(props) {
+class Error404 extends Component<ErrorProps> {
+
+    constructor(props: ErrorProps) {
         super('section', props);
     };
 
@@ -15,13 +21,15 @@ class Error404 extends Component {
     };
 };
 
+const errorButton = new Button({
+    text: 'НАЗАД',
+    attr: {
+        class: 'button button_err404'
+    }
+});
+
 const error404Page = new Error404({
-    button: new Button({
-        text: 'НАЗАД',
-        attr: {
-            class: 'button button_err404'
-        }
-    }),
+    button: errorButton,
     errIcon: errIcon,
     attr: {
         class: 'error404'

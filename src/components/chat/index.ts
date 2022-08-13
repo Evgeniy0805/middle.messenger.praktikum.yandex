@@ -2,8 +2,20 @@ import chat from './chat.hbs';
 import './chat.scss'
 import Component from '../../utils/Component';
 
-class Chat extends Component {
-    constructor(props) {
+type ChatProps = {
+    avatar: string,
+    name: string,
+    close: string,
+    date: string,
+    messages: object[],
+    chatInput: object,
+    sendIcon: string,
+    attr: object,
+    events: object
+};
+
+class Chat extends Component<ChatProps> {
+    constructor(props: ChatProps) {
         super('div', props);
     };
 
