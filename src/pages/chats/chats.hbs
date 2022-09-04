@@ -1,10 +1,12 @@
 <div class="chats__wrapper">
-    <a href="/profile" class="chats__link-profile">
-        <img src="{{iconSrc}}" alt="avatar" class="chats__avatar">
-    </a>
+    <img src="{{iconSrc}}" id="avatarIcon" alt="avatar" class="chats__avatar">
+    <img src="{{logoutIcon}}" id="logoutIcon" alt="logout" class="chats__logout">
     {{{input}}}
     {{#each chats}}
     {{{this}}}
     {{/each}}
 </div>
-{{{chat}}}
+<div class="chats__chat">
+    {{{chat}}}
+</div>
+

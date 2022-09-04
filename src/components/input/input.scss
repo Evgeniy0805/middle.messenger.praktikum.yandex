@@ -13,6 +13,10 @@
     &_error {
       border: solid 1px red;
     }  
+    &_popup {
+      background-color: $main-light-color;
+      color: $main-dark-color;
+    }
   }
 
   &__icon {
@@ -32,6 +36,12 @@
   &_chats {
     background-color: $main-light-color;
     color: $main-dark-color;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  &_popup {
+    margin-bottom: 25px;
   }
 
   &_chat {

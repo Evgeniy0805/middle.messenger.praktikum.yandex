@@ -7,8 +7,9 @@ type ChatPreviewProps = {
     title: string,
     lastMsg: string,
     time: string,
-    number: number,
-    attr: object
+    number: number | null,
+    attr: object,
+    events?: object
 };
 
 class ChatPreview extends Component<ChatPreviewProps> {

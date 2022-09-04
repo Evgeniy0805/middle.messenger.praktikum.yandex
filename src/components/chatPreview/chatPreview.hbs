@@ -7,7 +7,9 @@
 </div>
 <div class="chat-preview__data">
     <time class="chat-preview__time">{{time}}</time>
+    {{#if number}}
     <div class="chat-preview__unreadMsg">
         <div class="chat-preview__unreadMsg__number">{{number}}</div>
     </div>
+    {{/if}}
 </div>
