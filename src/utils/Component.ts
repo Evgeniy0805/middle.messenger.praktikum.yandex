@@ -11,7 +11,7 @@ abstract class Component<Props extends {} | boolean>{
     };
 
     private _id: string;
-    protected props: Record<string, object>
+    public props: Record<string, object>
     private _children: object;
     private _meta: object;
     public _element: HTMLElement;
