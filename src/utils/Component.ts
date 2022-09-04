@@ -11,7 +11,7 @@ abstract class Component<Props extends {} | boolean>{
     };
 
     private _id: string;
-    protected props: Record<string, object>
+    public props: Record<string, object>
     private _children: object;
     private _meta: object;
     public _element: HTMLElement;
@@ -39,7 +39,7 @@ abstract class Component<Props extends {} | boolean>{
         eventBus.emit(Component.EVENTS.INIT);
     }
 
-    _registerEvents(eventBus: EventBus) {
+    private _registerEvents(eventBus: EventBus) {
         eventBus.on(Component.EVENTS.INIT, this.init.bind(this));
         eventBus.on(Component.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
         eventBus.on(Component.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
@@ -71,11 +71,11 @@ abstract class Component<Props extends {} | boolean>{
 
     initChildren() {}
 
-    _createDocumentElement(tagName) {
+    private _createDocumentElement(tagName: string) {
         return document.createElement(tagName);
     };
 
-    _componentDidMount() {
+    private _componentDidMount() {
         return this._componentDidMount();
     };
 
@@ -83,7 +83,7 @@ abstract class Component<Props extends {} | boolean>{
         return true;
     };
 
-    _componentDidUpdate() {
+    private _componentDidUpdate() {
         const response = this.componentDidUpdate();
         if (response) {
             this.eventBus().emit(Component.EVENTS.FLOW_RENDER);
@@ -94,7 +94,7 @@ abstract class Component<Props extends {} | boolean>{
         return true;
     };
 
-    _render() {
+    private _render() {
         const block = this.render();
         this.removeEvents();
         this._element.innerHTML = '';
@@ -104,7 +104,7 @@ abstract class Component<Props extends {} | boolean>{
     };
 
     render() {
-        return document.createElement('div');
+        return document.createDocumentFragment();
     };
 
     addAttribute() {
@@ -151,13 +151,13 @@ abstract class Component<Props extends {} | boolean>{
         Object.values(this._children).forEach(child => {
             if (Array.isArray(child)) {
                 for (let i = 0; i < child.length; i++) {
-                    const stub = fragment.content.querySelector(`[data-id="${child[i]._id}"]`);
+                    const stub = (fragment as HTMLTemplateElement).content.querySelector(`[data-id="${child[i]._id}"]`);
                     if(stub) {
                         stub.replaceWith(child[i].getContent());
                     };
                 };
             } else {
-                const stub = fragment.content.querySelector(`[data-id="${child._id}"]`)
+                const stub = (fragment as HTMLTemplateElement).content.querySelector(`[data-id="${child._id}"]`)
 
                 if(stub) {
                     stub.replaceWith(child.getContent());
@@ -166,7 +166,7 @@ abstract class Component<Props extends {} | boolean>{
             
         });
 
-        return fragment.content;
+        return (fragment as HTMLTemplateElement).content;
     }
 
     public setProps = (nextProps) => {
@@ -184,7 +184,7 @@ abstract class Component<Props extends {} | boolean>{
         return this._element;
     }
 
-    _makePropsProxy = (props, eventBus) => {
+    private _makePropsProxy = (props, eventBus) => {
         const prop = new Proxy(props, {
             get(target, prop: string) {
                 if (prop.startsWith('_')) {
@@ -208,6 +208,14 @@ abstract class Component<Props extends {} | boolean>{
             }
         })
         return prop;
+    };
+
+    public show() {
+        this.getContent()!.style.display = "block";
+    };
+    
+    public hide() {
+        this.getContent()!.style.display = "none";
     };
 };
 

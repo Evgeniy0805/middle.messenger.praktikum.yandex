@@ -7,6 +7,8 @@ import passIcon from '../../assets/icons/pass.svg'
 import Button from '../../components/button/index';
 import Component from '../../utils/Component';
 import { validateInput, validateSubmit } from '../../utils/validation';
+import AuthController from '../../controllers/AuthController';
+import Router from '../../utils/Router';
 
 type AuthProps = {
   form: object,
@@ -28,7 +30,7 @@ const inputLogin = new Input({
   inputClass: null,
   type: 'text',
   placeholder: 'ПОЛЬЗОВАТЕЛЬ',
-  inputName: 'userName',
+  inputName: 'login',
   inputIconClass: null,
   urlImg: userIcon,
   attr: {
@@ -76,7 +78,10 @@ const authForm = new Form({
     class: 'form'
   },
   events: {
-    submit: (e: Event) => validateSubmit(e)
+    submit: async (e: Event) => {
+      const userData = validateSubmit(e);
+      await AuthController.login(JSON.stringify(userData) as any)
+    }
   }
 });
 
@@ -84,6 +89,15 @@ const authPage = new Auth({
   form: authForm,
   attr: {
     class: 'login'
+  },
+  events: {
+    click: async (e: Event) => {
+      const t = e.target as HTMLElement;
+      if (t && t.className === 'login__registration-link') {
+          const router = new Router('#root');
+          router.go('/sign-up');
+      };
+    }
   }
 });
 

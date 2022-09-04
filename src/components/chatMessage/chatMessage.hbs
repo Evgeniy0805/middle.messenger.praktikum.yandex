@@ -1,3 +1,5 @@
 <div class="chat-message__text">{{text}}</div>
-<img src="{{icon}}" alt="icon" class="chatMsg__read">
+{{#if icon}}
+    <img src="{{icon}}" alt="icon" class="chatMsg__read">
+{{/if}}
 <time class="chat-message__time">{{time}}</time>

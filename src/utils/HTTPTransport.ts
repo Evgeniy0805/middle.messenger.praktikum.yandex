@@ -1,17 +1,17 @@
-import queryStringify from './qureyStringify.js';
+import queryStringify from './qureyStringify';
 
 interface HTTPTransport {
   METHODS: Record<string, string>
 };
 
 interface Options {
-  data?: string, 
+  data?: any, 
   timeout?: number,
-  headers?: string,
+  headers?: object,
   method?: string
 };
 
-enum METHODS {
+enum Methods {
   GET = 'GET',
   PUT = 'PUT',
   POST = 'POST',
@@ -19,21 +19,26 @@ enum METHODS {
 }
 
 class HTTPTransport {
+  static API_URL = "https://ya-praktikum.tech/api/v2";
+  protected endpoint: string;
+  constructor(endpoint: string) {
+    this.endpoint = `${HTTPTransport.API_URL}${endpoint}`;
+  };
 
   get = (url: string, options: Options = {}) => {
     if (options.data) {
         options.data = queryStringify(options.data);
     }
-    return this.request(url + options.data, {...options, method: METHODS.GET}, options.timeout);
+    return this.request(`${this.endpoint}${url}`, {...options, method: Methods.GET});
   };
   post = (url: string, options: Options = {}) => {
-        return this.request(url, {...options, method: METHODS.POST}, options.timeout);
+        return this.request(`${this.endpoint}${url}`, {...options, method: Methods.POST});
   };
   put = (url: string, options: Options = {}) => {
-        return this.request(url, {...options, method: METHODS.PUT}, options.timeout);
+        return this.request(`${this.endpoint}${url}`, {...options, method: Methods.PUT});
   };
   delete = (url: string, options: Options = {}) => {
-        return this.request(url, {...options, method: METHODS.DELETE}, options.timeout);
+        return this.request(url, {...options, method: Methods.DELETE});
   };
 
   request = (url: string, options: Options, timeout = 5000) => {
@@ -48,20 +53,22 @@ class HTTPTransport {
       xhr.setRequestHeader(key, value);
       }
     }
-
+    xhr.withCredentials = true;
     if (!data) {
       xhr.send();
     } else {
       xhr.send(data);
     }
     xhr.onload = function() {
-      resolve(xhr);
+      resolve(this)
     };
     xhr.timeout = timeout;
-    xhr.onabort = reject;
-    xhr.onerror = reject;
-    xhr.ontimeout = reject;
+    xhr.onabort = () => reject({ reason: "abort" });
+    xhr.onerror = () => reject({ reason: "network error" });
+    xhr.ontimeout = () => reject({ reason: "timeout" });
     });
     return promise;
   };
 };
+
+export default HTTPTransport;

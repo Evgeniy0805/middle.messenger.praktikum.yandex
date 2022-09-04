@@ -6,7 +6,6 @@ type ChatProps = {
     avatar: string,
     name: string,
     close: string,
-    date: string,
     messages: object[],
     chatInput: object,
     sendIcon: string,

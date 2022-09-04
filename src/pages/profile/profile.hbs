@@ -1,5 +1,9 @@
+{{{popup}}}
 <div class="profile__wrapper">
-    <img src="{{src}}" alt="icon" class="profile__avatar">
+    <label for="avatar">
+        <img src="{{src}}" alt="icon" class="profile__avatar">
+    </label>
+    <input class="profile__avatar-input" id="avatar" type="file" name="avatar" accept="image/*">
     <h3 class="profile__title">{{title}}</h3>
     {{#each dataList}}
     {{{this}}}

@@ -21,7 +21,19 @@
   &__avatar {
     width: 120px;
     height: 120px;
+    border-radius: 100%;
     margin-bottom: 20px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: all .3s;
+    }
+
+    &-input {
+      position: absolute;
+      opacity: 0;
+    }
   }
 
   &__title {
@@ -33,5 +45,7 @@
 .button {
   &_profile {
     margin-top: 15px;
+    width: 150px;
+    cursor: pointer;
   }
 }

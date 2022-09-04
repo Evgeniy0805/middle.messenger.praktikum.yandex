@@ -3,6 +3,7 @@
 .chat {
   position: relative;
   width: 100%;
+  height: 100vh;
   background-color: $main-dark-color;
   font-size: 32px;
   color: $main-light-color;
@@ -10,6 +11,22 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  &__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 2px solid $main-light-color;
+
+    & svg {
+      width: 35px;
+      height: 35px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 
   &__empty {
     position: absolute;
@@ -33,16 +50,22 @@
   &__close {
     margin-left: auto;
     cursor: pointer;
+
+    &:hover {
+      transform: scale(1.03);
+      transition: all .3s;
+    }
   }
 
   &__messages-list {
     border: 2px solid $main-light-color;
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: inline-flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 15px;
+    overflow: auto;
   }
 
   &__date {
@@ -65,6 +88,11 @@
       width: 35px;
       height: 35px;
       cursor: pointer;
+
+      &:hover {
+        transform: scale(1.03);
+        transition: all .3s;
+      }
     }
   }
 }

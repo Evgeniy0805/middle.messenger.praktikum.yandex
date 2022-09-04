@@ -18,15 +18,6 @@ class Input extends Component<InputProps> {
         super('div', props);
     };
 
-    _render() {
-        const block = this.render();
-        this.removeEvents();
-        this._element.innerHTML = '';
-        this._element.appendChild(block);
-        this.addEvents();
-        this.addAttribute();
-    };
-
     render() {
         return this.compile(input, this.props);
     };
