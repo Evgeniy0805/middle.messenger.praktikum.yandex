@@ -13,7 +13,6 @@ import closeIcon from '../../assets/icons/close.svg';
 import chatsIcon from '../../assets/icons/chatIcon.svg';
 import plusIcon from '../../assets/icons/plus.svg';
 import sendIcon from '../../assets/icons/send.svg';
-import checkedIcon from '../../assets/icons/checked.svg';
 import logoutIcon from '../../assets/icons/logout.svg'
 import ChatMessage from '../../components/chatMessage';
 import AuthController from '../../controllers/AuthController';
@@ -21,17 +20,16 @@ import ChatsController from '../../controllers/ChatsController';
 import Router from '../../utils/Router';
 import store, { StoreEvents } from '../../utils/Store';
 import { renderDOM } from '../../utils/renderDOM';
-import UserController from '../../controllers/UserController';
-import isEqual from '../../utils/isEqual';
+import Config from '../../utils/config';
 
 type ChatsProps = {
     logoutIcon: string,
     iconSrc: string,
-    input: object,
-    chats: object[],
-    chat: object,
-    attr: object,
-    events?: object
+    input: Input,
+    chats: ChatPreview[],
+    chat: Chat,
+    attr: Record<'class', string>,
+    events?: Record<'click', (e:Event) => void>
 };
 
 class Chats extends Component<ChatsProps>{
@@ -41,46 +39,49 @@ class Chats extends Component<ChatsProps>{
 
         store.on(StoreEvents.Updated, () => {
             const state: any = store.getState();
-            if (state.currentUser.avatar && (this.props.iconSrc as any) != `https://ya-praktikum.tech/api/v2/resources/${state.currentUser.avatar}`) {
-                this.setProps({iconSrc: `https://ya-praktikum.tech/api/v2/resources/${(store.getState().currentUser as any).avatar}`});
+            if (state.currentUser.avatar && (this.props.iconSrc as any) != `${Config.resourcesUrl}${state.currentUser.avatar}`) {
+                this.setProps({iconSrc: `${Config.resourcesUrl}${store.getState().currentUser.avatar}`});
             };
 
             if (store.getState().chats) {
                 const chats = store.getState().chats;
                 chatList.splice(0, chatList.length);
-                (chats as object[]).forEach(chat => {
+                chats.forEach(chat => {
                     let classAttr = 'chat-preview';
-                    if ((chat as any).id == store.getState().activeChat) {
+                    if (chat.id == store.getState().activeChat) {
                         classAttr = 'chat-preview chat-preview_active'
                     };
                     let time = '';
-                    if ((chat as any).last_message) {
-                        time = ((chat as any).last_message?.time.split('T'))[1].split('+')[0].split(':');
-                        time = `${time[0]}:${time[1]}`
+                    if (chat.last_message) {
+                        const aTime = (chat.last_message.time.split('T'))[1].split('+')[0].split(':');
+                        time = `${aTime[0]}:${aTime[1]}`
                     };
                     
-                    let unreadCount = null;
-                    if((chat as any).unread_count) {
-                        unreadCount = (chat as any).unread_count;
+                    let unreadCount: string | null = null;
+                    if(chat.unread_count) {
+                        unreadCount = chat.unread_count;
                     };
                     chatList.push(new ChatPreview({
-                        iconSrc: `https://ya-praktikum.tech/api/v2/resources/${(store.getState().currentUser as any).avatar}`,
-                        title: (chat as any).title,
-                        lastMsg: (chat as any).last_message?.content,
+                        iconSrc: `${Config.resourcesUrl}${store.getState().currentUser.avatar}`,
+                        title: chat.title,
+                        lastMsg: chat.last_message?.content,
                         time: time,
                         number: unreadCount,
                         attr: {
                             class: `${classAttr}`,
-                            'data-id': (chat as any).id
+                            'data-id': chat.id
                         },
                         events: {
                             click: async (e: Event) => {
-                                const t = e.currentTarget as HTMLElement;
+                                const t = <HTMLElement>e.currentTarget;
                                 const activeChatId = t.getAttribute('data-id');
                                 store.set('activeChatId', activeChatId);
                                 await ChatsController.getChats();
                                 await ChatsController.getToken(Number(activeChatId));
-                                let currentChat = null;
+                                let currentChat = {
+                                    title: '',
+                                    id: ''
+                                };
                                 const aChat = document.querySelectorAll('.chat-preview');
                                 aChat.forEach( chat => {
                                     if (chat != t) {
@@ -88,19 +89,19 @@ class Chats extends Component<ChatsProps>{
                                     };
                                 });
                                 const chats = store.getState().chats;
-                                (chats as any).forEach(chat => {
+                                chats.forEach(chat => {
                                     if (chat.id == activeChatId) {
                                         currentChat = chat;
                                     } 
                                 });
                                 t.classList.add('chat-preview_active');
-                                await ChatsController.getUsersById((currentChat as any).id);
+                                await ChatsController.getUsersById(currentChat.id);
                                 let avatarUrl = plusIcon;
-                                if ((store.getState().users as any)[0].avatar && (store.getState().users as any).length > 1) {
-                                    avatarUrl = `https://ya-praktikum.tech/api/v2/resources/${(store.getState().users as any)[0].avatar}`;
+                                if (store.getState().users[0].avatar && store.getState().users.length > 1) {
+                                    avatarUrl = `${Config.resourcesUrl}${store.getState().users[0].avatar}`;
                                 }
                                 chatArea.setProps({
-                                    name: `${(currentChat as any).title}  ${(currentChat as any).id}`,
+                                    name: `${currentChat.title}  ${currentChat.id}`,
                                     avatar: avatarUrl
                                 });
                             }
@@ -134,18 +135,20 @@ class Chats extends Component<ChatsProps>{
                         }
                     }))
                 };
-                const user: any = (store.getState().users as object[])[0];
+                const user = store.getState().users[0];
                 console.log(user)
                 chatArea.setProps({
                     name: `${user.first_name} ${user.second_name}`,
                     messagesList: messagesList,
-                    avatar: `https://ya-praktikum.tech/api/v2/resources/${user.avatar}`
+                    avatar: `${Config.resourcesUrl}${user.avatar}`
                 });
-                const activeChat = document.querySelector(`[data-id='${store.getState().activeChatId}']`);
-                (activeChat as any).classList.add('chat-preview_active');
+                const activeChat = document.querySelector<HTMLElement>(`[data-id='${store.getState().activeChatId}']`);
+                activeChat?.classList.add('chat-preview_active');
                 renderDOM('.chats__chat', chatArea);
-                const msgList: HTMLElement | null = document.querySelector('.chat__messages-list');
-                ((msgList as HTMLElement).scrollTop as any) = msgList?.scrollHeight;
+                const msgList = document.querySelector<HTMLElement>('.chat__messages-list');
+                if (msgList) {
+                    msgList.scrollTop = msgList.scrollHeight;
+                }  
         }) 
     };
 
@@ -171,7 +174,7 @@ const chatPreview = new ChatPreview({
     title: 'Пустой чат',
     lastMsg: '',
     time: '',
-    number: 0,
+    number: '0',
     attr: {
         class: 'chat-preview'
     }
@@ -207,7 +210,7 @@ const chatArea = new Chat({
     },
     events: {
         click: async (e: Event) => {
-            const t = e.target as HTMLElement;
+            const t = <HTMLElement>e.target;
             const msgInput = document.querySelector<HTMLInputElement>('.input_chat');
             if (t && t.tagName === 'IMG' && msgInput) {
                 if (msgInput.value.length === 0) {
@@ -240,25 +243,27 @@ const emptyChatArea = new EmptyChat({
     },
     events: {
         click: async (e: Event) => {
-            const t = e.target as HTMLElement;
-            const userID = (document.querySelector('.input_empty-chat') as HTMLInputElement).value
+            const t = <HTMLElement>e.target;
+            const userID = document.querySelector<HTMLInputElement>('.input_empty-chat')?.value
             if (t && t.tagName === 'BUTTON') {
                 await ChatsController.createChat(JSON.stringify({title: `Пользователь с id: ${userID}`}) as any);
-                const currentChat = (store.getState().currentChat as any).id;
+                const currentChat = store.getState().currentChat.id;
                 await ChatsController.addUser(JSON.stringify({chatId: currentChat, users: [userID]}));
                 await ChatsController.getUsersById(currentChat);
-                const user: any = (store.getState().users as object[])[0];
-                console.log(`https://ya-praktikum.tech/api/v2/resources/${user.avatar}`)
+                const user: any = store.getState().users[0];
                 chatArea.setProps({
                     name: `${user.first_name} ${user.second_name}`,
-                    avatar: `https://ya-praktikum.tech/api/v2/resources/${user.avatar}`
+                    avatar: `${Config.resourcesUrl}${user.avatar}`
                 });
                 await ChatsController.getChats();
                 await ChatsController.getToken(currentChat);
                 store.set('activeChatId', currentChat);
-                const curChat = document.querySelector('[data-id="'+(store.getState().currentChat as any).id+'"]');
+                const curChat = document.querySelector('[data-id="'+store.getState().currentChat.id+'"]');
                 curChat?.classList.add('chat-preview_active');
-                (document.querySelector('.input_empty-chat') as HTMLInputElement).value = '';
+                const inputField = document.querySelector<HTMLInputElement>('.input_empty-chat');
+                if (inputField) {
+                    inputField.value = '';
+                }
                 renderDOM('.chats__chat', chatArea);
             }
         }
@@ -276,7 +281,7 @@ const chatsPage = new Chats({
     },
     events: {
         click: async (e: Event) => {
-            const t = e.target as HTMLElement;
+            const t = <HTMLElement>e.target;
             if (t && t.id === 'logoutIcon') {
                 await AuthController.logout();
             };

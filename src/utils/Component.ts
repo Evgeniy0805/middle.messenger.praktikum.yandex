@@ -48,7 +48,7 @@ abstract class Component<Props extends {} | boolean>{
 
     init() {
         const {tagName}: any = this._meta;
-        this._element = this._createDocumentElement(tagName);
+        this._element = <HTMLTemplateElement>this._createDocumentElement(tagName);
         this.eventBus().emit(Component.EVENTS.FLOW_RENDER)
     };
 
@@ -72,7 +72,7 @@ abstract class Component<Props extends {} | boolean>{
     initChildren() {}
 
     private _createDocumentElement(tagName: string) {
-        return document.createElement(tagName);
+        return <HTMLTemplateElement>document.createElement(tagName);
     };
 
     private _componentDidMount() {
@@ -151,13 +151,13 @@ abstract class Component<Props extends {} | boolean>{
         Object.values(this._children).forEach(child => {
             if (Array.isArray(child)) {
                 for (let i = 0; i < child.length; i++) {
-                    const stub = (fragment as HTMLTemplateElement).content.querySelector(`[data-id="${child[i]._id}"]`);
+                    const stub = fragment.content.querySelector<HTMLTemplateElement>(`[data-id="${child[i]._id}"]`);
                     if(stub) {
                         stub.replaceWith(child[i].getContent());
                     };
                 };
             } else {
-                const stub = (fragment as HTMLTemplateElement).content.querySelector(`[data-id="${child._id}"]`)
+                const stub = fragment.content.querySelector(`[data-id="${child._id}"]`)
 
                 if(stub) {
                     stub.replaceWith(child.getContent());
@@ -166,7 +166,7 @@ abstract class Component<Props extends {} | boolean>{
             
         });
 
-        return (fragment as HTMLTemplateElement).content;
+        return fragment.content;
     }
 
     public setProps = (nextProps) => {

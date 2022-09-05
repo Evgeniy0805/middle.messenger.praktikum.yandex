@@ -8,15 +8,16 @@ export default class UserApi {
         this.http = new HTTPTransport('/user');
     };
 
-    public changeProfile(data: RegData, headers: object) {
+    public async changeProfile(data: RegData, headers: object) {
         return this.http.put('/profile', {data: data, headers: headers});
     };
 
-    public changeAvatar(data: FormData, headers: object) {
+    public async changeAvatar(data: FormData, headers: object) {
         return this.http.put('/profile/avatar', {data: data, headers: headers});
     };
 
-    public changePassword(data: PassData, headers: object) {
-        return this.http.put('/profile/password', {data: data, headers: headers});
+    public async changePassword(data: PassData, headers: object) {
+        const dataPass = JSON.stringify(data);
+        return this.http.put('/password', {data: dataPass, headers: headers});
     };
 }

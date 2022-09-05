@@ -4,8 +4,8 @@ import Component from '../../utils/Component';
 
 type ButtonProps = {
     text:string,
-    attr?: object,
-    events?: object  
+    attr?: Record<'class', string>,
+    events?: Record<'click', (e: Event) => void>
 };
 
 class Button extends Component<ButtonProps>{

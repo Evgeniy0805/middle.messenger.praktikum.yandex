@@ -7,9 +7,9 @@ type ChatPreviewProps = {
     title: string,
     lastMsg: string,
     time: string,
-    number: number | null,
-    attr: object,
-    events?: object
+    number: string | null,
+    attr: Record<'class', string> | Record<'class' | 'data-id', string>,
+    events?: Record<'click', (e: Event) => Promise<void>>
 };
 
 class ChatPreview extends Component<ChatPreviewProps> {

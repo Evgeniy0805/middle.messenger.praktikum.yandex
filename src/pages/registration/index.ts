@@ -13,9 +13,9 @@ import AuthController from '../../controllers/AuthController';
 import Router from '../../utils/Router';
 
 type RegProps = {
-  form: object,
-  attr: object,
-  events: object
+  form: Form,
+  attr: Record<'class', string>,
+  events: Record<'click', (e:Event) => void>
 };
 
 class Registration extends Component<RegProps> {
@@ -208,7 +208,7 @@ const regPage = new Registration({
   },
   events: {
     click: (e: Event) => {
-      const t = e.target as HTMLElement;
+      const t = <HTMLElement>e.target;
       if (t && t.className === 'registration__login-link') {
         const router = new Router('#root');
         router.go('/');

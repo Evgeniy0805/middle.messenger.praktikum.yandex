@@ -13,6 +13,10 @@ class ChatsController {
         this._socket = null;
     };
 
+    private send (data: Record<string, string>): void {
+      this._socket?.send(JSON.stringify(data))
+   }
+
     async createChat(chatsData: {title: 'string'}) {
         const response: any = await this._api.createChat(chatsData, {'Content-Type': 'application/json'});
         if (response.status == 200) {
@@ -52,13 +56,11 @@ class ChatsController {
 
         this._socket.addEventListener('open', () => {
             console.log('Соединение установлено');
-            this._socket?.send(
-              JSON.stringify({
+            this.send({
                 content: '0',
                 type: 'get old',
               })
-            );
-        });
+          });
 
         this._socket.addEventListener("close", (event) => {
             if (event.wasClean) {
@@ -78,31 +80,25 @@ class ChatsController {
                 store.set('currentMessages', response);
               }
             } else if (response.type === 'message') {
-              this._socket?.send(
-                JSON.stringify({
+              this.send({
                   content: "0",
                   type: "get old",
-                })
-              );
-            };
-            store.emit(StoreEvents.UpdatedMessages);
+                });
+              };
+           store.emit(StoreEvents.UpdatedMessages);
         });
     };
 
     async sendMessage(newMessage) {
         if (this._socket) {
-          this._socket.send(
-            JSON.stringify({
+          this.send({
               content: newMessage,
               type: "message",
-            })
-          );
-          this._socket.send(
-            JSON.stringify({
+            });
+          this.send({
               content: "0",
               type: "get old",
             })
-          );
         }
     }
 }

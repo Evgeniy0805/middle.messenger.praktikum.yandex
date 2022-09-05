@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables";
 
 .profile {
   width: 100%;
@@ -27,7 +27,7 @@
 
     &:hover {
       transform: scale(1.05);
-      transition: all .3s;
+      transition: all 0.3s;
     }
 
     &-input {

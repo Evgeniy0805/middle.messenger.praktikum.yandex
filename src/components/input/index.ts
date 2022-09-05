@@ -9,8 +9,8 @@ type InputProps = {
     inputName: string,
     inputIconClass: string | null,
     urlImg: string | null,
-    attr: object,
-    events?: object,
+    attr: Record<'class', string>,
+    events?: Record<'blur' | 'input' | 'focus', (e:Event) => void>,
 };
 
 class Input extends Component<InputProps> {

@@ -7,19 +7,19 @@ export default class AuthApi {
         this.http = new HTTPTransport('/auth');
     };
 
-    public signIn(data: AuthData, headers: object) {
+    public async signIn(data: AuthData, headers: object) {
         return this.http.post('/signin', {data: data, headers: headers});
     };
 
-    public signUp(data: RegData, headers: object) {
+    public async signUp(data: RegData, headers: object) {
         return this.http.post('/signup', {data: data, headers: headers});
     };
 
-    public getUser() {
+    public async getUser() {
         return this.http.get('/user', {});
     };
 
-    public logout() {
+    public async logout() {
         return this.http.post('/logout', {});
     };
 };

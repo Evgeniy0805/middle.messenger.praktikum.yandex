@@ -11,9 +11,9 @@ import AuthController from '../../controllers/AuthController';
 import Router from '../../utils/Router';
 
 type AuthProps = {
-  form: object,
-  attr: object,
-  events?: object
+  form: Form,
+  attr: Record<'class', string>,
+  events?: Record<'click', (e:Event) => void>
 }
 
 class Auth extends Component<AuthProps>{
@@ -92,7 +92,7 @@ const authPage = new Auth({
   },
   events: {
     click: async (e: Event) => {
-      const t = e.target as HTMLElement;
+      const t = <HTMLElement>e.target;
       if (t && t.className === 'login__registration-link') {
           const router = new Router('#root');
           router.go('/sign-up');

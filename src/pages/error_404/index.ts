@@ -6,8 +6,8 @@ import errIcon from '../../assets/icons/err404.svg';
 
 type ErrorProps = {
     errIcon: string,
-    button: object,
-    attr: object
+    button: Button,
+    attr: Record<'class', string>
 };
 
 class Error404 extends Component<ErrorProps> {

@@ -1,5 +1,3 @@
-import AuthController from "../controllers/AuthController";
-
 const validationExp = {
     login: {
         exp: /(^[А-ЯЁ]{1}[а-яё-]+)|(^[A-Z]{1}[a-z-]+)/u,

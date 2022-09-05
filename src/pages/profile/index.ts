@@ -13,15 +13,16 @@ import store, { StoreEvents } from '../../utils/Store';
 import AuthController from '../../controllers/AuthController';
 import UserController from '../../controllers/UserController';
 import Router from '../../utils/Router';
+import Config from '../../utils/config';
 
 type ProfileProps = {
     src: string,
     title: string,
     dataList: object[],
-    buttons: object[],
-    popup: object,
-    events: object,
-    attr: object
+    buttons: Button[],
+    popup: Popup,
+    events: Record<'change', (e:Event) => Promise<void>>,
+    attr: Record<'class', string>
 };
 
 class Profile extends Component<ProfileProps> {
@@ -29,15 +30,25 @@ class Profile extends Component<ProfileProps> {
     constructor(props: ProfileProps) {
         super('section', props);
         store.on(StoreEvents.Updated, () => {
-            emailInput.setProps({placeholder: (store.getState().currentUser as any).email});
-            loginInput.setProps({placeholder: (store.getState().currentUser as any).login});
-            firstNameInput.setProps({placeholder: (store.getState().currentUser as any).first_name});
-            secondNameInput.setProps({placeholder: (store.getState().currentUser as any).second_name});
-            phoneInput.setProps({placeholder: (store.getState().currentUser as any).phone});
-            const display_name = `${(store.getState().currentUser as any).first_name} ${(store.getState().currentUser as any).second_name}`;
+            emailInput.setProps({
+                placeholder: store.getState().currentUser.email
+            });
+            loginInput.setProps({
+                placeholder: store.getState().currentUser.login
+            });
+            firstNameInput.setProps({
+                placeholder: store.getState().currentUser.first_name
+            });
+            secondNameInput.setProps({
+                placeholder: store.getState().currentUser.second_name
+            });
+            phoneInput.setProps({
+                placeholder: store.getState().currentUser.phone
+            });
+            const display_name = `${store.getState().currentUser.first_name} ${store.getState().currentUser.second_name}`;
             this.setProps({title: display_name});
-            if ((store.getState().currentUser as any).avatar) {
-                this.setProps({iconSrc: `https://ya-praktikum.tech/api/v2/resources/${(store.getState().currentUser as any).avatar}`});
+            if (store.getState().currentUser.avatar) {
+                this.setProps({iconSrc: `${Config.resourcesUrl}${store.getState().currentUser.avatar}`});
             }
         });
     };
@@ -265,20 +276,20 @@ const profilePage = new Profile({
                 class: 'button'
             },
             events: {
-                click: (e:Event) => {
-                    const inputs: NodeList | null = document.querySelectorAll('.input__item_popup');
+                click: async (e:Event) => {
+                    const inputs = document.querySelectorAll<HTMLInputElement>('.input__item_popup');
                     let data = {
                         oldPassword: '',
                         newPassword: ''
                     };
                     inputs.forEach(input => {
-                        const inputName = (input as HTMLInputElement).name;
-                        if ((input as HTMLInputElement).value) {
-                            data[inputName] = (input as HTMLInputElement).value;
-                            (input as HTMLInputElement).value = '';
+                        const inputName = input.name;
+                        if (input.value) {
+                            data[inputName] = input.value;
+                            input.value = '';
                         }
                     });
-                    UserController.changePassword(data);
+                    await UserController.changePassword(data);
                 }
             } 
         }),
@@ -287,8 +298,8 @@ const profilePage = new Profile({
         },
         events: {
             click: (e: Event) => {
-                const t = e.target;
-                if (t && (t as HTMLElement).className === 'popup__close') {
+                const t = <HTMLElement>e.target;
+                if (t && t.className === 'popup__close') {
                     const popup = document.querySelector('.popup');
                     popup?.setAttribute('style', 'display: none;');
                 }
@@ -328,7 +339,7 @@ const profilePage = new Profile({
                         }
                     });
                     userData.display_name = `${userData.first_name} ${userData.second_name}`
-                    UserController.changeProfile(JSON.stringify(userData) as any);
+                    await UserController.changeProfile(JSON.stringify(userData) as any);
                 }
             }
         }),
@@ -347,7 +358,7 @@ const profilePage = new Profile({
     ],
     events: {
         change: async (e: Event) => {
-            const t = e.target as HTMLInputElement;
+            const t = <HTMLElement>e.target;
             if (t && t.id === 'avatar') {
                 const inputFile: HTMLInputElement | null = document.querySelector('#avatar');
                 if (inputFile && inputFile.files) {
@@ -356,7 +367,7 @@ const profilePage = new Profile({
                     await UserController.changeAvatar(formData);
                 };
                 await AuthController.getUser();
-                profilePage.setProps({src: `https://ya-praktikum.tech/api/v2/resources/${(store.getState().currentUser as any).avatar}`});
+                profilePage.setProps({src: `${Config.resourcesUrl}${store.getState().currentUser.avatar}`});
             };
         }
     },

@@ -6,7 +6,7 @@ type ProfileItemProps = {
     placeholder: string,
     text: object,
     editIcon: string,
-    attr: object
+    attr: Record<'class', string>
 };
 
 class ProfileItem extends Component<ProfileItemProps> {

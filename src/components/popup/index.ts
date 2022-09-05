@@ -1,13 +1,15 @@
 import popup from "./popup.hbs";
 import './popup.scss'
 import Component from '../../utils/Component';
+import Input from '../input/index';
+import Button from '../button/index';
 
 type PopupProps = {
     closeIcon: string,
-    inputs: object[],
-    button: object,
-    attr: object,
-    events?: object
+    inputs: Input[],
+    button: Button,
+    attr: Record<'class', string>,
+    events?: Record<'click', (e:Event) => void>
 };
 
 class Popup extends Component<PopupProps> {
@@ -16,7 +18,8 @@ class Popup extends Component<PopupProps> {
     };
 
     render() {
-        return this.compile(popup, this.props);;
+        this.hide()
+        return this.compile(popup, this.props);
     };
 
 }

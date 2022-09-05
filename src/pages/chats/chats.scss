@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables";
 
 .chats {
   display: flex;
@@ -37,7 +37,7 @@
 
     &:hover {
       transform: scale(1.05);
-      transition: all .3s;
+      transition: all 0.3s;
     }
   }
 
