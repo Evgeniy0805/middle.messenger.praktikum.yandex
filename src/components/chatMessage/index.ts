@@ -6,7 +6,7 @@ type ChatMessageProps = {
     text: string,
     icon: string | null,
     time: string,
-    attr: object,
+    attr: Record<'class', string>
 };
 
 class ChatMessage extends Component<ChatMessageProps> {

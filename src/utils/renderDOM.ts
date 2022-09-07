@@ -1,6 +1,7 @@
-import Component from "./Component";
-
-export function renderDOM(query: string, block: Component) {
+export function renderDOM(query: string, block: any) {
     const root = document.querySelector(query);
-    if (root) root.appendChild(block.getContent());
+    if (root) {
+        root.innerHTML = '';
+        root.appendChild(block.getContent());
+    }
 }

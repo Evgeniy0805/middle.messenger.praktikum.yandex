@@ -1,23 +1,44 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables";
 
 .chats {
   display: flex;
   justify-content: space-between;
 
+  &__chat {
+    position: relative;
+    width: 100%;
+    background-color: $main-dark-color;
+    font-size: 32px;
+    color: $main-light-color;
+  }
+
   &__wrapper {
+    position: relative;
     width: 50%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    padding: 25px;
     color: $main-dark-color;
   }
 
   &__link-profile {
     text-decoration: none;
     color: $main-dark-color;
+  }
+
+  &__avatar {
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    margin-top: 15px;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.3s;
+    }
   }
 
   &_chats {
@@ -28,5 +49,13 @@
       background-color: $main-light-color;
       color: $main-dark-color;
     }
+  }
+
+  &__logout {
+    position: absolute;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
   }
 }

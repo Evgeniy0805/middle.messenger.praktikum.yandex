@@ -9,22 +9,13 @@ type InputProps = {
     inputName: string,
     inputIconClass: string | null,
     urlImg: string | null,
-    attr: object,
-    events?: object,
+    attr: Record<'class', string>,
+    events?: Record<'blur' | 'input' | 'focus', (e:Event) => void>,
 };
 
 class Input extends Component<InputProps> {
     constructor(props: InputProps) {
         super('div', props);
-    };
-
-    _render() {
-        const block = this.render();
-        this.removeEvents();
-        this._element.innerHTML = '';
-        this._element.appendChild(block);
-        this.addEvents();
-        this.addAttribute();
     };
 
     render() {

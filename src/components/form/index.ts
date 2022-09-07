@@ -1,13 +1,15 @@
 import form from "./form.hbs";
 import './form.scss';
 import Component from '../../utils/Component';
+import Input from '../input/index';
+import Button from '../button/index';
 
 type FormProps = {
    title: string,
-   inputs: object[],
-   button: object,
-   attr: object, 
-   events: object
+   inputs: Input[],
+   button: Button,
+   attr: Record<'class', string>, 
+   events: Record<'submit', (e: Event) => Promise<void>>
 }
 
 class Form extends Component<FormProps> {

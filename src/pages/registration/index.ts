@@ -9,10 +9,13 @@ import addUserIcon from '../../assets/icons/addUser.svg';
 import phoneIcon from '../../assets/icons/phone.svg';
 import passIcon from '../../assets/icons/pass.svg';
 import { validateInput, validateSubmit } from '../../utils/validation';
+import AuthController from '../../controllers/AuthController';
+import Router from '../../utils/Router';
 
 type RegProps = {
-  form: object,
-  attr: object
+  form: Form,
+  attr: Record<'class', string>,
+  events: Record<'click', (e:Event) => void>
 };
 
 class Registration extends Component<RegProps> {
@@ -63,7 +66,7 @@ const firstNameInput = new Input({
   inputClass: null,
   type: 'text',
   placeholder: 'ИМЯ',
-  inputName: 'firstName',
+  inputName: 'first_name',
   inputIconClass: null,
   urlImg: addUserIcon,
   attr: {
@@ -80,7 +83,7 @@ const secondNameInput = new Input({
   inputClass: null,
   type: 'text',
   placeholder: 'ФАМИЛИЯ',
-  inputName: 'secondName',
+  inputName: 'second_name',
   inputIconClass: null,
   urlImg: addUserIcon,
   attr: {
@@ -169,7 +172,7 @@ const regForm = new Form({
     class: 'form'
   },
   events: {
-    submit: (e: Event) => {
+    submit: async (e: Event) => {
       e.preventDefault();
       try {
         const inputs = document.querySelectorAll('input');
@@ -188,7 +191,9 @@ const regForm = new Form({
             }
           }
         });
-        validateSubmit(e);
+        const userData = validateSubmit(e);
+        userData.display_name = `${userData.first_name} ${userData.second_name}`;
+        await AuthController.signUp(JSON.stringify(userData) as any);
       } catch({msg}) {
         alert(msg);
       } 
@@ -200,6 +205,15 @@ const regPage = new Registration({
   form: regForm,
   attr: {
     class: 'registration'
+  },
+  events: {
+    click: (e: Event) => {
+      const t = <HTMLElement>e.target;
+      if (t && t.className === 'registration__login-link') {
+        const router = new Router('#root');
+        router.go('/');
+      };
+    }
   }
 });
 

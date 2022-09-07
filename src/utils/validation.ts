@@ -1,19 +1,13 @@
-import { Exception } from "handlebars";
-
 const validationExp = {
     login: {
-        exp: /(^[а-яё-]+)|(^[a-z-]+)/u,
-        msg: 'Логин может начинаться только с буквы'
-    },
-    userName: {
         exp: /(^[А-ЯЁ]{1}[а-яё-]+)|(^[A-Z]{1}[a-z-]+)/u,
         msg: 'Имя должно начинаться c большой буквы'
     },
-    firstName: {
+    first_name: {
         exp: /(^[А-ЯЁ]{1}[а-яё-]+)|(^[A-Z]{1}[a-z-]+)/u,
         msg: 'Имя должно начинаться c большой буквы'
     },
-    secondName: {
+    second_name: {
         exp: /(^[А-ЯЁ]{1}[а-яё-]+)|(^[A-Z]{1}[a-z-]+)/u,
         msg: 'Имя должно начинаться c большой буквы'
     },
@@ -65,7 +59,7 @@ const validateInput = (e: Event): void => {
     }
 };
 
-const validateSubmit = (e: Event): void => {
+const validateSubmit = (e: Event): any => {
     e.preventDefault();
     const inputs = document.querySelectorAll('input');
     const userData = {};
@@ -83,7 +77,7 @@ const validateSubmit = (e: Event): void => {
         inputs.forEach(input => {
             input.value = '';
         });
-        console.log(userData);
+        return userData;
     } catch({field}) {
         alert(`Введите корректные данные в поле "${field.toLowerCase()}"`)
     };
