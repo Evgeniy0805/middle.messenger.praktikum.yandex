@@ -40,13 +40,13 @@ class Chats extends Component<ChatsProps>{
         store.on(StoreEvents.Updated, () => {
             const state: any = store.getState();
             if (state.currentUser.avatar && (this.props.iconSrc as any) != `${Config.resourcesUrl}${state.currentUser.avatar}`) {
-                this.setProps({iconSrc: `${Config.resourcesUrl}${store.getState().currentUser.avatar}`});
+                this.setProps({iconSrc: `${Config.resourcesUrl}${store.getState().currentUser?.avatar}`});
             };
 
             if (store.getState().chats) {
                 const chats = store.getState().chats;
                 chatList.splice(0, chatList.length);
-                chats.forEach(chat => {
+                chats?.forEach(chat => {
                     let classAttr = 'chat-preview';
                     if (chat.id == store.getState().activeChat) {
                         classAttr = 'chat-preview chat-preview_active'
@@ -62,7 +62,7 @@ class Chats extends Component<ChatsProps>{
                         unreadCount = chat.unread_count;
                     };
                     chatList.push(new ChatPreview({
-                        iconSrc: `${Config.resourcesUrl}${store.getState().currentUser.avatar}`,
+                        iconSrc: `${Config.resourcesUrl}${store.getState().currentUser?.avatar}`,
                         title: chat.title,
                         lastMsg: chat.last_message?.content,
                         time: time,
@@ -89,7 +89,7 @@ class Chats extends Component<ChatsProps>{
                                     };
                                 });
                                 const chats = store.getState().chats;
-                                chats.forEach(chat => {
+                                chats?.forEach(chat => {
                                     if (chat.id == activeChatId) {
                                         currentChat = chat;
                                     } 
@@ -97,8 +97,8 @@ class Chats extends Component<ChatsProps>{
                                 t.classList.add('chat-preview_active');
                                 await ChatsController.getUsersById(currentChat.id);
                                 let avatarUrl = plusIcon;
-                                if (store.getState().users[0].avatar && store.getState().users.length > 1) {
-                                    avatarUrl = `${Config.resourcesUrl}${store.getState().users[0].avatar}`;
+                                if ((store.getState().users as object)[0].avatar && (store.getState().users as []).length > 1) {
+                                    avatarUrl = `${Config.resourcesUrl}${(store.getState().users as object)[0].avatar}`;
                                 }
                                 chatArea.setProps({
                                     name: `${currentChat.title}  ${currentChat.id}`,
@@ -135,7 +135,7 @@ class Chats extends Component<ChatsProps>{
                         }
                     }))
                 };
-                const user = store.getState().users[0];
+                const user = (store.getState().users as object)[0];
                 console.log(user)
                 chatArea.setProps({
                     name: `${user.first_name} ${user.second_name}`,
@@ -247,10 +247,10 @@ const emptyChatArea = new EmptyChat({
             const userID = document.querySelector<HTMLInputElement>('.input_empty-chat')?.value
             if (t && t.tagName === 'BUTTON') {
                 await ChatsController.createChat(JSON.stringify({title: `Пользователь с id: ${userID}`}) as any);
-                const currentChat = store.getState().currentChat.id;
+                const currentChat = store.getState().currentChat?.id;
                 await ChatsController.addUser(JSON.stringify({chatId: currentChat, users: [userID]}));
                 await ChatsController.getUsersById(currentChat);
-                const user: any = store.getState().users[0];
+                const user: any = (store.getState().users as any)[0];
                 chatArea.setProps({
                     name: `${user.first_name} ${user.second_name}`,
                     avatar: `${Config.resourcesUrl}${user.avatar}`
@@ -258,7 +258,7 @@ const emptyChatArea = new EmptyChat({
                 await ChatsController.getChats();
                 await ChatsController.getToken(currentChat);
                 store.set('activeChatId', currentChat);
-                const curChat = document.querySelector('[data-id="'+store.getState().currentChat.id+'"]');
+                const curChat = document.querySelector('[data-id="'+store.getState().currentChat?.id+'"]');
                 curChat?.classList.add('chat-preview_active');
                 const inputField = document.querySelector<HTMLInputElement>('.input_empty-chat');
                 if (inputField) {

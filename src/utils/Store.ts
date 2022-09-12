@@ -25,38 +25,42 @@ export enum StoreEvents {
     UpdatedMessages = 'updatedMessages'
 };
 
+type State = {
+    test?: any,
+    currentChat?: {
+        id: string
+    },
+    currentUser?: {
+        login: string
+        email: string,
+        first_name: string,
+        second_name: string,
+        phone: string,
+        avatar: string
+    },
+    currentMessages?: object,
+    activeChat?: string,
+    activeChatId?: string,
+    users?: {
+        first_name?: string,
+        second_name?: string,
+        avatar?: string
+    }[],
+    chats?: {
+        id: string,
+        title: string,
+        unread_count: string | null,
+        last_message: {
+            time: string,
+            content: string
+        }
+    }[]
+};
+
 class Store extends EventBus {
-    private state: {
-        test?: any,
-        currentChat?: {
-            id: string
-        },
-        currentUser?: {
-            login: string
-            email: string,
-            first_name: string,
-            second_name: string,
-            phone: string,
-            avatar: string
-        },
-        currentMessages?: object,
-        activeChat?: string,
-        activeChatId?: string,
-        users?: {
-            first_name: string,
-            second_name: string,
-            avatar: string
-        }[],
-        chats?: {
-            id?: string,
-            title?: string,
-            unread_count?: string | null,
-            last_message?: {
-                time?: string,
-                content?: string
-            }
-        }[]
-    } = {};
+    
+
+    private state: State = {};
   
     public getState() {
       return this.state;
