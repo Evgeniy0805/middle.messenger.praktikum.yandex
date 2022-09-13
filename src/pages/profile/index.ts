@@ -31,24 +31,24 @@ class Profile extends Component<ProfileProps> {
         super('section', props);
         store.on(StoreEvents.Updated, () => {
             emailInput.setProps({
-                placeholder: store.getState().currentUser.email
+                placeholder: store.getState().currentUser?.email
             });
             loginInput.setProps({
-                placeholder: store.getState().currentUser.login
+                placeholder: store.getState().currentUser?.login
             });
             firstNameInput.setProps({
-                placeholder: store.getState().currentUser.first_name
+                placeholder: store.getState().currentUser?.first_name
             });
             secondNameInput.setProps({
-                placeholder: store.getState().currentUser.second_name
+                placeholder: store.getState().currentUser?.second_name
             });
             phoneInput.setProps({
-                placeholder: store.getState().currentUser.phone
+                placeholder: store.getState().currentUser?.phone
             });
-            const display_name = `${store.getState().currentUser.first_name} ${store.getState().currentUser.second_name}`;
+            const display_name = `${store.getState().currentUser?.first_name} ${store.getState().currentUser?.second_name}`;
             this.setProps({title: display_name});
-            if (store.getState().currentUser.avatar) {
-                this.setProps({iconSrc: `${Config.resourcesUrl}${store.getState().currentUser.avatar}`});
+            if (store.getState().currentUser?.avatar) {
+                this.setProps({iconSrc: `${Config.resourcesUrl}${store.getState().currentUser?.avatar}`});
             }
         });
     };
@@ -367,7 +367,7 @@ const profilePage = new Profile({
                     await UserController.changeAvatar(formData);
                 };
                 await AuthController.getUser();
-                profilePage.setProps({src: `${Config.resourcesUrl}${store.getState().currentUser.avatar}`});
+                profilePage.setProps({src: `${Config.resourcesUrl}${store.getState().currentUser?.avatar}`});
             };
         }
     },

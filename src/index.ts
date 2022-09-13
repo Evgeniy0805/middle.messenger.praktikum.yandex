@@ -5,6 +5,7 @@ import chatsPage from './pages/chats/index';
 import profilePage from './pages/profile/index';
 import error404Page from './pages/error_404/index';
 import error500Page from './pages/error_500/index';
+import './styles/style.scss';
 
 window.addEventListener('DOMContentLoaded', () => {
     

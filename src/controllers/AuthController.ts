@@ -15,7 +15,7 @@ class AuthController {
         const response: any = await this._api.signIn(authData, {'Content-Type': 'application/json'});
         if (response.status == 401) {
             alert('Некорректные логин или пароль')
-        } else if (response.status == 200) {
+        } else if (response.status == 200 || response.status == 400) {
             await this.getUser();
             const router = new Router('#root');
             router.go('/messenger');
